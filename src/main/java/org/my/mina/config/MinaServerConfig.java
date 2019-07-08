@@ -129,7 +129,7 @@ public class MinaServerConfig {
      * 创建连接
      * @return
      */
-    @Bean(initMethod = "init", destroyMethod = "destroy")
+    @Bean(initMethod = "init", destroyMethod = "dispose")
     public NioSocketAcceptor nioSocketAcceptor(ServerHandler serverHandler,
             DefaultIoFilterChainBuilder defaultIoFilterChainBuilder) {
         NioSocketAcceptor acceptor = new NioSocketAcceptor();
