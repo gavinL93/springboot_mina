@@ -29,6 +29,7 @@ public class MinaRunServletContextListener implements ServletContextListener {
 //        logger.info("---server acceptor dispose---");
 //        System.out.println("---server acceptor dispose---" + Thread.currentThread().getName());
 //        acceptor.dispose();
+        System.out.println("---test contextDestroyed nethod---");
     }
 
     @Override

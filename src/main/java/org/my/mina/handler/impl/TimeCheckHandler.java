@@ -8,13 +8,10 @@ import org.my.mina.handler.BaseHandler;
 import org.my.mina.session.MySession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 
 public class TimeCheckHandler implements BaseHandler {
 
     static final Logger logger = LoggerFactory.getLogger(TimeCheckHandler.class);
-
-    @Autowired
 
     @Override
     public String process(MySession mySession, String content) {

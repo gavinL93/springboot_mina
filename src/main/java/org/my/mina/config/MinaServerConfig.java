@@ -38,10 +38,21 @@ public class MinaServerConfig {
 
     private HashMap<Integer, BaseHandler> handlers = new HashMap<>();
 
+    
     @Bean
-    public ServerHandler serverHandler() {
-        handlers.put(Const.AUTHEN, new BindHandler());
-        handlers.put(Const.TIME_CHECK, new TimeCheckHandler());
+    public BindHandler bindHandler() {
+        return new BindHandler();
+    }
+
+    @Bean
+    public TimeCheckHandler timeCheckHandler() {
+        return new TimeCheckHandler();
+    }
+    
+    @Bean
+    public ServerHandler serverHandler(BindHandler bindHandler, TimeCheckHandler timeCheckHandler) {
+        handlers.put(Const.AUTHEN, bindHandler);
+        handlers.put(Const.TIME_CHECK, timeCheckHandler);
         ServerHandler serverHandler = new ServerHandler();
         serverHandler.setHandlers(handlers);
         return serverHandler;
